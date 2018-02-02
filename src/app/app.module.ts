@@ -1,4 +1,3 @@
-import { PartnerService } from './services/partner/partner.service';
 import { ToasterService } from './services/toaster/toaster.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,7 +15,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 
 // App views
-import {DashboardsModule} from "./views/dashboards/dashboards.module";
 import {AppviewsModule} from "./views/appviews/appviews.module";
 
 // App modules/components
@@ -30,7 +28,6 @@ import {LayoutsModule} from "./components/common/layouts/layouts.module";
     BrowserModule,
     FormsModule,
     HttpModule,
-    DashboardsModule,
     LayoutsModule,
     AppviewsModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -38,7 +35,7 @@ import {LayoutsModule} from "./components/common/layouts/layouts.module";
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, ToasterService, PartnerService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, ToasterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

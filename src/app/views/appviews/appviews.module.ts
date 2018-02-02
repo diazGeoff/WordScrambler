@@ -6,16 +6,20 @@ import {BrowserModule} from "@angular/platform-browser";
 import {RouterModule} from "@angular/router";
 import { FormsModule } from '@angular/forms';
 
-import {StarterViewComponent} from "./starterview.component";
-import {LoginComponent} from "./login.component";
-
 import {PeityModule } from '../../components/charts/peity';
 import {SparklineModule } from '../../components/charts/sparkline';
+import { LoginComponent } from 'app/views/appviews/login/login.component';
+import { StarterViewComponent } from 'app/views/appviews/starter/starterview.component';
+
+
+const NavigatableComponents: any = [
+	LoginComponent,
+	StarterViewComponent
+];
 
 @NgModule({
   declarations: [
-    StarterViewComponent,
-    LoginComponent
+    ...NavigatableComponents
   ],
   imports: [
     BrowserModule,
@@ -28,8 +32,7 @@ import {SparklineModule } from '../../components/charts/sparkline';
     IboxtoolsModule
   ],
   exports: [
-    StarterViewComponent,
-    LoginComponent
+    ...NavigatableComponents
   ],
 })
 
