@@ -9,7 +9,7 @@ import { LoginComponent } from "app/views/appviews/login/login.component";
 
 export const ROUTES:Routes = [
   // Main redirect
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '', redirectTo: 'starterview', pathMatch: 'full'},
   {
     path: '', component: BasicLayoutComponent,
     children: [
